@@ -9,7 +9,7 @@ async function createBought(user, booksToBuyArray) {
   const books = await Book.findAll({
     where: { id: booksToBuyArray.map((b) => b.bookId) }, // Filtrar los libros por bookId
   });
-  console.log(books);
+  console.log("libros por comprar:", books);
 
   const boughtBooks = booksToBuyArray.map((b) => {
     const book = books.find((x) => x.id === b.bookId);
